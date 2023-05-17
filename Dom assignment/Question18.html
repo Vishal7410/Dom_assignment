@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Text on Button click. </title>
+</head>
+<style>
+    body{
+        height: 100%;
+        width: 100%;
+    }
+    #heading  { 
+        display: flex;
+        align-items: center;
+        align-content: center;
+        color: red;
+     }
+
+     button{
+        background-color: red;
+        color: white;
+
+     }
+
+
+</style>
+<body>
+    <h1 id="heading">The most affordable learning platform</h1>
+
+    <button id="toggleButton">Toggle Test</button>
+
+
+    <script>
+
+        const heading = document.getElementById("heading");
+        const toggleButton = document.getElementById("toggleButton");
+
+
+        toggleButton.addEventListener('click',()=>{
+            if(heading.textContent === 'The most affordable learning platform'){
+                heading.textContent ='PW skills';
+            }else{
+                heading.textContent = 'The most affordable learning platform'
+            }
+        });
+
+
+    </script>
+    
+</body>
+</html>

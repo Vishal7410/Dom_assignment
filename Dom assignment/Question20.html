@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dynamically Adding List Items</title>
+</head>
+<body>
+  <h2>What you'll learn:</h2>
+  <ol id="list"></ol>
+  <button id="addItemBtn">Add Item</button>
+
+  <script>
+    // Pre-existing array of list items
+    var listItems = ["HTML and Semantics", "Starting with CSS", "Working Template", "Mobile responsive webpages", "Grid and Flex-box in CSS","Projects using HTML & CSS","Version Control and Git","Getting Started with JavaScript","Advance JavaScript","Working with DOM","Making Projects using HTML, CSS and JavaScript","Understanding Fundamental of Computer Science","Getting Started with Database","Understanding the Database","Starting with NodeJS and Express","Understanding React and its Fundamentals","Understanding Hooks and Routers","Starting and Completing Full Fledge Projects"];
+
+    // Counter to keep track of the current list item index
+    var currentIndex = 0;
+
+    // Function to add a new list item
+    function addListItem() {
+      var list = document.getElementById("list");
+
+      // Check if there are remaining items in the list
+      if (currentIndex < listItems.length) {
+        var listItem = document.createElement("li");
+        listItem.textContent = listItems[currentIndex];
+        list.appendChild(listItem);
+        currentIndex++;
+      } else {
+        alert("All items have been added.");
+      }
+    }
+
+    // Event listener for the button click
+    var addButton = document.getElementById("addItemBtn");
+    addButton.addEventListener("click", addListItem);
+  </script>
+</body>
+</html>

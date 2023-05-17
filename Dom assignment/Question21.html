@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simple To-Do App</title>
+  <style>
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    li {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Simple To-Do App</h2>
+  <input id="todoInput" type="text" placeholder="Enter a TODO item">
+  <button id="addTodoBtn">Add Todo</button>
+  <ul id="todoList"></ul>
+
+  <script>
+    // Function to add a new TODO item to the list
+    function addTodo() {
+      var input = document.getElementById("todoInput");
+      var todo = input.value.trim();
+
+      if (todo !== '') {
+        var list = document.getElementById("todoList");
+        var listItem = document.createElement("li");
+        listItem.textContent = todo;
+        list.appendChild(listItem);
+        input.value = '';
+      }
+    }
+
+    // Event listener for the button click
+    var addButton = document.getElementById("addTodoBtn");
+    addButton.addEventListener("click", addTodo);
+
+    // Event listener for the Enter key press in the input field
+    var inputField = document.getElementById("todoInput");
+    inputField.addEventListener("keypress", function(event) {
+      if (event.key === "Enter") {
+        addTodo();
+      }
+    });
+  </script>
+</body>
+</html>

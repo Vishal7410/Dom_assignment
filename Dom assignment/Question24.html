@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .highlight {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <p id="myParagraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis vitae perspiciatis libero omnis error. Similique nihil deserunt earum reiciendis ipsum possimus quibusdam. Reiciendis, minus. Quibusdam assumenda accusantium, qui magnam praesentium placeat tenetur ratione impedit vel. Eaque atque vero magnam delectus deleniti sint necessitatibus fuga itaque? Libero magni culpa itaque accusamus maxime voluptatem repellendus voluptate rerum, eos obcaecati laboriosam molestias? Praesentium, qui. Fuga dignissimos vero consequatur, nulla accusamus, tenetur labore expedita consequuntur modi ipsam soluta dolor deleniti impedit. Atque, magni repudiandae pariatur non esse deleniti dolores impedit nesciunt itaque sequi reprehenderit magnam illum, blanditiis vel corrupti voluptatum aspernatur consequatur sint odit?</p>
+
+    <script>
+        var paragraph = document.getElementById('myParagraph');
+        var words = paragraph.innerText.split(' ');
+
+        for (var i = 0; i < words.length; i++) {
+            if (words[i].length > 8) {
+                var span = document.createElement('span');
+                span.className = 'highlight';
+                span.innerText = words[i];
+                words[i] = span.outerHTML;
+            }
+        }
+
+        paragraph.innerHTML = words.join(' ');
+    </script>
+</body>
+</html>
